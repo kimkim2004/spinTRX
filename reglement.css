@@ -1,0 +1,148 @@
+/* Appliquer la police Poppins */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a1b18; /* Arrière-plan sombre */
+    color: #ffffff; /* Texte blanc pour contraste */
+    line-height: 1.6;
+}
+
+.rules-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #121f1d; /* Légèrement plus clair que le fond */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border: 1px solid #39ffe2; /* Couleur principale */
+}
+
+.rules-container h1 {
+    color: #39ffe2; /* Couleur principale */
+    border-bottom: 2px solid #39ffe2;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.rules-list, .warnings-list {
+    padding-left: 20px;
+}
+
+.rules-list li, .warnings-list li {
+    margin: 10px 0;
+}
+
+.rules-list li strong {
+    color: #39ffe2; /* Accent sur les montants */
+}
+
+.responsible-gaming {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(57, 255, 226, 0.1); /* Couleur principale en semi-transparence */
+    border: 1px solid #39ffe2;
+    border-radius: 5px;
+}
+
+.responsible-gaming h2 {
+    color: #39ffe2; /* Couleur principale */
+}
+
+.responsible-gaming p {
+    color: #b0f5eb; /* Texte complémentaire */
+}
+
+.back-home-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: #39ffe2; /* Bouton principal */
+    color: #0a1b18; /* Contraste avec le fond */
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.back-home-btn:hover {
+    background: #2fd0c5; /* Légère variation au survol */
+}
+
+/* Style du menu latéral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #010d0b;
+    color: #39ffe2;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #39ffe2;
+    text-transform: uppercase;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #39ffe2;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background: #39ffe2;
+    color: #010d0b;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.sidebar.visible {
+    transform: translateX(0);
+}
+
+/* Bouton pour afficher/masquer le sidebar */
+.toggle-sidebar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background: #39ffe2;
+    color: #010d0b;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.toggle-sidebar:hover {
+    background: #c92e3b;
+    color: #fff;
+}

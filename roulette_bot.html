@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpinTRX</title>
+    <link rel="stylesheet" href="roulette_bot.css">
+</head>
+<body>
+      <!-- Sidebar et Bouton -->
+      <section>
+        <!-- Bouton pour afficher/masquer la sidebar -->
+        <button id="toggleSidebar" class="toggle-sidebar">☰</button>
+
+        <!-- Sidebar -->
+        <div class="sidebar hidden">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="roulette_bot.html">Wheel</a></li>
+                <li><a href="affiliation.html">Affiliation</a></li>
+                <li><a href="depot.html">Dépot</a></li>
+                <li><a href="retrait.html">Retrait</a></li>
+                <li><a href="reglement.html">Reglement</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="spinBtn">Spin</div>
+        <div class="wheel">
+            <span style="--i:0;"></span>
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:15;"></span>
+            <div class="number">
+                <b style="--i:0;">x100</b>
+                <b style="--i:1;">x1</b>
+                <b style="--i:2;">x0</b>
+                <b style="--i:3;">x2</b>
+                <b style="--i:4;">x1</b>
+                <b style="--i:5;">x0</b>
+                <b style="--i:6;">x2</b>
+                <b style="--i:7;">x0</b>
+                <b style="--i:8;">x5</b>
+                <b style="--i:9;">x0</b>
+                <b style="--i:10;">x1</b>
+                <b style="--i:11;">x10</b>
+                <b style="--i:12;">x0</b>
+                <b style="--i:13;">x2</b>
+                <b style="--i:14;">x0</b>
+                <b style="--i:15;">x5</b>
+            </div>
+
+        </div>
+
+        <div class="wheel inner">
+            <span style="--i:0;"></span>
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:15;"></span>
+        </div>
+    </div>
+
+    <!-- Champ de saisie de mise -->
+    <div class="bet-container">
+        <label for="betInput" class="bet-label">Entrez votre mise (min : 10 TRX) :</label>
+        <input type="number" id="betInput" class="bet-input" placeholder="Mise en TRX" min="10">
+        <p id="betError" class="error-message hidden">La mise minimale est de 10 TRX.</p>
+    </div>
+
+    <div id="resultModal" class="modal hidden">
+        <div class="modal-content">
+            <p id="resultMessage" class="message"></p>
+            <p id="resultMultiplier" class="multiplier"></p>
+            <p id="resultGain" class="gain"></p> 
+            <button id="claimButton" class="claim">Claim</button>
+        </div>
+    </div>
+
+    <div id="tempMessage" class="hidden"></div>
+
+    <div id="balanceDisplay" class="balance">
+        Solde : <span id="balanceValue">1000</span> TRX
+    </div>
+    
+
+    <script src="roulette_bot.js"></script>
+</body>
+</html>

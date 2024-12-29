@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliation</title>
+    <link rel="stylesheet" href="affiliation.css"> <!-- Fichier CSS -->
+</head>
+<body>
+    <main>
+        <!-- Sidebar et Bouton -->
+        <section>
+            <!-- Bouton pour afficher/masquer la sidebar -->
+            <button id="toggleSidebar" class="toggle-sidebar">☰</button>
+
+            <!-- Sidebar -->
+            <div class="sidebar hidden">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="roulette_bot.html">Wheel</a></li>
+                    <li><a href="affiliation.html">Affiliation</a></li>
+                    <li><a href="depot.html">Dépot</a></li>
+                    <li><a href="retrait.html">Retrait</a></li>
+                    <li><a href="reglement.html">Reglement</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="intro-affiliation">
+            <h1>Rejoignez notre programme d'affiliation</h1>
+            <p>Gagnez des TRX en invitant vos amis à utiliser notre plateforme !</p>
+        </section>
+
+        <!-- Comment ça fonctionne -->
+        <section class="how-it-works">
+            <h2>Comment ça fonctionne ?</h2>
+            <ul>
+                <li>Partagez votre lien d'affiliation unique.</li>
+                <li>Vos invités s'inscrivent et rechargent leur compte.</li>
+                <li>Recevez des commissions sur leurs transactions.</li>
+            </ul>
+        </section>
+
+        <!-- Avantages -->
+        <section class="rewards">
+            <h2>Vos avantages</h2>
+            <ul>
+                <li>Commission de 10% sur chaque mise de vos affiliés.</li>
+                <li>Bonus de 50 TRX pour chaque nouvel affilié actif.</li>
+                <li>Tableau de bord pour suivre vos gains en temps réel.</li>
+            </ul>
+        </section>
+
+        <!-- Démarrage -->
+        <section class="get-started">
+            <h2>Commencez dès aujourd'hui</h2>
+            <p>Rendez-vous sur votre compte pour générer votre lien d'affiliation.</p>
+            <button id="generateLinkBtn">Générer mon lien</button>
+        </section>
+    </main>
+    <!-- Message temporaire -->
+    <div id="tempMessage" class="hidden">Cette option n'est pas encore disponible.</div>
+    <!-- Script JS -->
+    <script src="affiliation.js"></script>
+</body>
+</html>

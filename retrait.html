@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrait</title>
+    <link rel="stylesheet" href="retrait.css">
+</head>
+<body>
+    <!-- Sidebar et Bouton -->
+    <section>
+        <!-- Bouton pour afficher/masquer la sidebar -->
+        <button id="toggleSidebar" class="toggle-sidebar">☰</button>
+
+        <!-- Sidebar -->
+        <div class="sidebar hidden">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="roulette_bot.html">Wheel</a></li>
+                <li><a href="affiliation.html">Affiliation</a></li>
+                <li><a href="depot.html">Dépot</a></li>
+                <li><a href="retrait.html">Retrait</a></li>
+                <li><a href="reglement.html">Reglement</a></li>
+            </ul>
+        </div>
+    </section>
+    <div class="container">
+        <h1>Effectuez un Retrait</h1>
+        <p>Solde disponible : <span id="balanceValue">1000</span> TRX</p>
+        <div class="input-group">
+            <input type="number" id="withdrawAmount" placeholder="Entrez le montant du retrait (min. 100 TRX)">
+        </div>
+        <div class="input-group" id="tronAddressGroup" style="display: none;">
+            <input type="text" id="tronAddress" placeholder="Entrez votre adresse TRON">
+        </div>
+        <button id="submitButton">Soumettre</button>
+        <p id="tempMessage"></p>
+    </div>
+
+    <script src="retrait.js"></script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+/* POPPINS FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0a1b18;
+}
+.container
+{
+    bottom: 50px;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container::before
+{
+    content: "";
+    position: absolute;
+    top: 45px;
+    width: 35px;
+    height: 55px;
+    background: #f43648;
+    z-index: 500;
+    clip-path: polygon(50% 0%, 65% 50%, 50% 100%, 35% 50%);
+
+}
+.wheel
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #39ffe2;
+    box-shadow: 0 0 10px #39ffe2;
+    transition: transform 5s ease-in-out;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.inner span {
+    position: absolute;
+    left: calc(50% - 1px); /* Centre le séparateur */
+    width: 2px; /* Épaisseur du séparateur */
+    height: 100%; /* Va jusqu'au bord de la roue */
+    background: #39ffe2; /* Couleur des séparateurs */
+    transform: rotate(calc(22.5deg * var(--i))); /* Rotation selon l'index */
+    filter: drop-shadow(0 0 5px #39ffe2); /* Effet lumineux */
+}
+.spinBtn {
+    position: absolute;
+    inset: 140px;
+    background: #39ffe2;
+    color: #0a1b18;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500; /* Réduit pour ne pas dépasser celui du modal */
+    cursor: pointer;
+    filter: drop-shadow(0 0 5px #39ffe2);
+    user-select: none;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.number
+{
+    position: absolute;
+    inset: 0;
+rotate: 22.5deg;
+}
+.number b {
+    position: absolute;
+    inset: 10px;
+    transform: rotate(calc(22.5deg * var(--i)));
+    text-align: center;
+    font-size: 1.8em;
+    color: #39ffe2;
+    font-weight: 500;
+    filter: drop-shadow(0 0 5px #39ffe2);
+}
+
+.inner
+{
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    
+    border: 3px solid #39ffe2;
+    transition: transform 5s ease-in-out;
+}
+.spinBtn:hover {
+    transform: scale(1.1);
+    background: #010d0b;
+    color: #fff;
+}
+
+.result {
+    position: absolute;
+    top: 80%;
+    font-size: 1.5em;
+    color: #39ffe2;
+    font-weight: 600;
+    filter: drop-shadow(0 0 5px #39ffe2);
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 360px;
+        height: 360px;
+    }
+    .wheel{
+        width: 100%;
+        height: 100%;
+    }
+    .inner{
+        width: 70%;
+        height: 70%;
+    }
+    .spinBtn {
+        inset: 100px;
+        font-size: 1.2em;
+    }
+    .number b {
+        font-size: 1.5em;
+    }
+}
+/* Style pour le cadran */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Plus élevé que tous les autres éléments */
+    transition: opacity 0.3s ease;
+}
+
+.modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-content {
+    background: #0a1b18;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.message {
+    font-size: 20px;
+    color: #39ffe2;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.multiplier {
+    font-size: 24px;
+    color: #39ffe2;
+    margin-bottom: 20px;
+}
+
+.gain {
+    font-size: 20px;
+    color: #f43648;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.claim {
+    padding: 10px 20px;
+    background: #010d0b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.claim:hover {
+    background: #c92e3b;
+}
+
+.bet-container {
+    position: absolute; /* Permet de placer précisément l'élément */
+    bottom: 10px; /* Aligne le champ en bas du conteneur parent */
+    left: 50%; /* Centre horizontalement */
+    transform: translateX(-50%); /* Ajuste la position pour un centrage parfait */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7); /* Ajout d'un fond semi-transparent (optionnel) */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #39ffe2; /* Effet lumineux */
+    z-index: 600;
+}
+
+.bet-label {
+    color: #39ffe2;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.bet-input {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #39ffe2;
+    border-radius: 5px;
+    background: #0a1b18;
+    color: #39ffe2;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    box-shadow: 0 0 5px #39ffe2;
+}
+
+.bet-input:focus {
+    border-color: #f43648;
+    box-shadow: 0 0 5px #f43648;
+}
+
+.error-message {
+    color: #f43648;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.error-message.hidden {
+    display: none;
+}
+
+.bet-label, .bet-input, .error-message {
+    margin-bottom: 5px; /* Pour espacer légèrement les éléments */
+}
+
+.container, .bet-container{
+    margin-bottom: 5px;
+}
+
+#tempMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#tempMessage.visible {
+    opacity: 1;
+}
+
+.balance {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Style du menu latéral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #010d0b;
+    color: #39ffe2;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #39ffe2;
+    text-transform: uppercase;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #39ffe2;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background: #39ffe2;
+    color: #010d0b;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.sidebar.visible {
+    transform: translateX(0);
+}
+
+/* Bouton pour afficher/masquer le sidebar */
+.toggle-sidebar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background: #39ffe2;
+    color: #010d0b;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.toggle-sidebar:hover {
+    background: #c92e3b;
+    color: #fff;
+}
+
+
+
+@media (max-width: 480px) {
+    .container{
+        bottom: 50px;
+    }
+    .wheel{
+        width: 80%;
+        height: 80%;
+    }
+    .inner{
+        width: 55%;
+        height: 55%;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .spinBtn {
+        inset: 120px;
+        font-size: 14px;
+    }
+    .container::before{
+        top: 80px;
+        width: 35px;
+        height: 55px;
+    }
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 210px;
+    }
+}
